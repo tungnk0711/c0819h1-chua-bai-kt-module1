@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let noExist = 'No exist';
+    let exist = 'You age:';
+
+    function getYearOld(num) {
+        let date = new Date();
+        let year = date.getFullYear();
+        if (num > year) {
+            return noExist;
+        } else {
+            let yearOld = year - num + 1;
+            return exist + yearOld;
+        }
+    }
+
+    let num = parseInt(prompt("Enter year of birth: "));
+    let result = getYearOld(num);
+    alert(result);
+
+</script>
+
+</body>
+</html>

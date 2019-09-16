@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 01</title>
+</head>
+<body>
+<input id="txtInput">
+<button id="btnClick" onclick="show()">CLICK</button>
+<script>
+
+    function checkPrime(num) {
+        if (num < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < num - 1; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    function showPrimes() {
+        let number = parseInt(document.getElementById("txtInput").value);
+        for (let i = 1; i <= number; i++) {
+            if (checkPrime(i)) {
+                document.write("" + i + " ");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

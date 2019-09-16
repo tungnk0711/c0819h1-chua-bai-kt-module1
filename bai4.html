@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function inputArray(max) {
+        let array = new Array();
+        for (let curent = 0; curent < max; curent++) {
+            array[curent] = new Array();
+            for (let column = 0; column < max; column++) {
+                array[curent][column] = Math.floor(Math.random() * 100);
+
+            }
+        }
+        return array;
+    }
+
+    function tinhTongMaTran(array) {
+        let sum = 0;
+        for (curent = 0; curent < array.length; curent++) {
+            for (column = 0; column < array[curent].length; column++) {
+                sum += check(curent, column, array);
+            }
+        }
+
+        return sum;
+    }
+
+    function check(a, b, array) {
+        if (a === b) {
+            return array[a][b];
+        }
+        return 0;
+    }
+
+    function print(max, brray) {
+        for (curent = 0; curent < max; curent++) {
+            for (column = 0; column < max; column++) {
+                document.write(brray[curent][column] + ' ');
+            }
+            document.write('<br>');
+        }
+        document.write(tinhTongMaTran(brray));
+    }
+
+
+    let max = 3;
+
+    let arr = inputArray(max);
+
+    print(max, arr);
+
+
+</script>
+
+</body>
+</html>
